@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="rtl">
+        <h1>התורים שלי:</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>שעה:</th>
+                <th>תאריך:</th>
+                <th>רופא:</th>
+                <th>מרכז רפואי:</th>
+                {% for item in query_results %}
+                    <tr>
+                        <td>{{ item.time_field|date:"H:i" }}</td>
+                        <td>{{ item.date_field|date:"d/m/Y" }}</td>
+                        <td>{{ item.doctor }}</td>
+                        <td>{{ item.doctor.center }}</td>
+                        <td>
+                            <form action="{% url 'delete' item.id %}" method=POST class="delete-app myform">
+                                {% csrf_token %}
+                                <input type=hidden value={{ item.id }} name=post_to_delete></input>
+                                <input type=submit value="בטל תור"></input>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}

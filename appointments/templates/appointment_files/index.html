@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="rtl">
+  <h1 class="display-1">תורים:</h1>
+  <p class="lead">
+    <a class="btn btn-primary btn-md" href="{% url 'add' %}" role="button">הוספת תור</a>
+  </p><p>
+    <a class="btn btn-primary btn-md" href="{% url 'view_appointment' %}" role="button">צפיה בתורים</a>
+  </p>
+</div>
+{% endblock %}

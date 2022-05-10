@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="rtl">
+        {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+        <div ng-app="CC4U" ng-controller="DoctorSelect">
+            {% verbatim %}
+            <div ng-show="cities && city == null">
+                <h1 class="select-title">בחר עיר:</h1>
+                <ul>
+                    <li ng-repeat="scity in cities" class="option_list">
+                        <a href="#" ng-click="select_city(scity)">{{ scity.name }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div ng-show="city != null">
+                <h1>
+                    עיר
+                    {{ city.name }}
+                </h1>
+                <div>
+                    <a href="#" ng-click="unselect_city()" class="button">לבחירת עיר אחרת לחץ כאן</a>
+                </div>
+
+                <div ng-show="centers && center == null">
+                    <h1 class="select-title">בחר מרכז:</h1>
+                    <ul>
+                        <li ng-repeat="scenter in centers" class="option_list">
+                            <a href="#" ng-click="select_center(scenter)">{{ scenter.name }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div ng-show="center != null">
+                    <h1>
+                        מרכז
+                        {{ center.name }}
+                    </h1>
+                    <div>
+                        <a href="#" ng-click="unselect_center()" class="button">לבחירת מרכז אחרת לחץ כאן</a>
+                    </div>
+
+                    <div ng-show="doctors && doctor == null">
+                        <h1 class="select-title">בחר רופא</h1>
+                        <ul>
+                            <li ng-repeat="sdoctor in doctors" class="option_list">
+                                <a href="#" ng-click="select_doctor(sdoctor)">{{ sdoctor.first_name }} {{ sdoctor.last_name }}, {{ sdoctor.speciality }}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div ng-show="doctor != null">
+                        <h1>
+                            רופא
+                            {{ doctor.first_name }} {{ doctor.last_name }}, {{ doctor.speciality }}
+
+                        </h1>
+                        <div><a href="#" ng-click="unselect_doctor()" class="button">לבחירת רופא אחר לחץ כאן</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endverbatim %}
+        </div>
+        <form id="myform" class="myform" action="{% url "appointment_add_sec" %}" method="post" style="display: none">
+            {% csrf_token %}
+
+            <div>
+                <p>בחר תאריך:</p>
+                {{ form.date_field }}
+            </div>
+            <div>
+                <p>בחר שעה:</p>
+                {{ form.time_field }}
+            </div>
+            <div>
+                <p>ת"ז:</p>
+                {{ form.patient }}
+            </div>
+            {{ form.doctor }}
+            <input type="submit" value="add"/>
+        </form>
+    </div>
+{% endblock %}
+
+{% block extra_footer %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="/static/js/add_appointment.js"></script>
+{% endblock %}
