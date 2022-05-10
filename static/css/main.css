@@ -1,0 +1,124 @@
+body {
+    background: url("/static/img/bg.jpg") no-repeat #a2dbd8;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5px 0 50px 0;
+}
+
+div.content{
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+header div.logo {
+    width: 250px;
+    padding: 5px 5px;
+}
+
+header div.main-menu{
+    flex-grow: 1;
+    text-align: right;
+}
+
+header div.login-box{
+    width: 200px;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+ul.errorlist{
+    color: red;
+}
+
+form.myform {
+    padding: 20px;
+}
+
+form.myform div.input{
+
+}
+
+form.myform label{
+    margin-top: 10px;
+    margin-bottom: 2px;
+    display: block;
+}
+
+form.myform input[type="submit"] {
+    margin-top: 10px;
+    background-color: #6dd0cd;
+    border: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+form.myform input[type="submit"]:hover {
+    background-color: #5eb3b0;
+}
+
+.doctors{
+    margin-top: 30px;
+}
+
+a,a:link,a:visited {
+    color: black;
+    text-decoration: none;
+}
+.button {
+    background-color: #6dd0cd;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.button:hover {
+    background-color: #5eb3b0;
+}
+
+.auth-button {
+    background-color: #6dd0cd;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.auth-button:hover {
+    background-color: #5eb3b0;
+}
+
+.submit-row {
+    margin-top: 10px;
+}
+
+.rtl{
+    direction: rtl;
+    font-family: Arial;
+}
+
+.rtl h1{
+    font-size: 120%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.rtl .option_list li{
+    margin-bottom: 5px;
+}
+
+.rtl .all{
+    float: left;
+}
+
+.rtl .center_details li{
+    margin-bottom: 10px;
+
+}
+
+.rtl .table{
+    width: 100%;
+}

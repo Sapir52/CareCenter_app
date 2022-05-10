@@ -1,0 +1,22 @@
+{%  extends "base.html" %}
+{% block content %}
+    <form class="myform" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p class="submit-row">
+        <input type="submit" value="Apply"/>
+    </p>
+  </form>
+  <ul>
+    {% for x in Customer %}
+      <li>
+        {{ x.id }}
+        <p>{{ x.phone_number }}</p>
+        <p>{{ x.address }}</p>
+        <p>{{ x.email }}</p>
+
+        <a href="{% url 'update' x.id %}">update</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
