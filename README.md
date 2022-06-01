@@ -47,3 +47,8 @@ To load the initial centers data please run the folowing command:
 Once migration and initial data load is complete , run the project using the following command:
 
 `python manage.py runserver`
+
+# Home
+![nomePage](https://user-images.githubusercontent.com/63209732/171460707-83268363-ca60-438f-81b7-18de22da43a8.png)
+
+#
