@@ -18,8 +18,6 @@ To migrate the database structure to the latest version please run the following
 
 `python manage.py migrate`
 
-`python manage.py makemigrations`
-
 # Load initial data:
 
 To load the initial centers data please run the folowing command:
