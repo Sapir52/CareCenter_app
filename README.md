@@ -48,7 +48,6 @@ Once migration and initial data load is complete , run the project using the fol
 
 `python manage.py runserver`
 
-# Home
+### Home
 ![nomePage](https://user-images.githubusercontent.com/63209732/171460707-83268363-ca60-438f-81b7-18de22da43a8.png)
 
-#
