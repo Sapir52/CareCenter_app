@@ -13,7 +13,6 @@ from centers.views import cities_json, doctors_json, centers_json
 class ModelsTestCase(TestCase):
     # unit tests
 
-    # Unit test #1 - Yana
     # PM2020T15-34
     def test_neighborhood_visible(self):
         city = City(name="Tel Aviv")
@@ -21,7 +20,6 @@ class ModelsTestCase(TestCase):
 
         self.assertTrue("Center" not in str(neighborhood))
 
-    # Unit test #2 - Yana
     # PM2020T15-34
     def test_city_name_property(self):
         city = City(name="Tel Aviv")
@@ -89,7 +87,6 @@ class ModelsIntegrationTestCase(TestCase):
 
         return center
 
-    # Integration test #1 - Yana
     # PM2020T15-34
     def test_search_by_city(self):
         # function 1 - save the center into the database
@@ -101,7 +98,6 @@ class ModelsIntegrationTestCase(TestCase):
         # function 3 - test if the center is not visible for a search in Ashdod
         self.assertFalse(Center.objects.filter(neighborhood__city=self.city_ashdod).exists())
 
-    # Integration test #2 - Yana
     # PM2020T15-34
     def test_delete_a_center(self):
         # function 1 - save the center into the database
@@ -116,7 +112,6 @@ class ModelsIntegrationTestCase(TestCase):
         # function 4 - test that we can no longer find the center in Tel Aviv
         self.assertFalse(Center.objects.filter(neighborhood__city=self.city_tel_aviv).exists())
 
-    # Integration test #3 - Yana
     # PM2020T15-34
     def test_find_centers_by_neighborhood(self):
         # function 1 - save the center1 into the database
@@ -128,7 +123,6 @@ class ModelsIntegrationTestCase(TestCase):
         # function 3 - test that both centers are accessible via neighborhood
         self.assertEqual(self.neighborhood_tel_aviv.center_set.count(), 2)
 
-    # Integration test #4 - Yana
     # PM2020T15-34
     def test_find_centers_by_network(self):
         # function 1 - save the center1 into the database
@@ -140,7 +134,6 @@ class ModelsIntegrationTestCase(TestCase):
         # function 3 - test that both centers are accessible via neighborhood
         self.assertEqual(self.network.center_set.count(), 2)
 
-    # Integration test #5 - Yana
     # PM2020T15-34
     def test_find_centers_by_city(self):
         # function 1 - save the center1 into the database
@@ -152,13 +145,11 @@ class ModelsIntegrationTestCase(TestCase):
         # function 3 - test that both centers are accessible via city
         self.assertEquals(Center.objects.filter(neighborhood__city=self.city_tel_aviv).count(), 2)
 
-    # Unit test #4 - Yana
     # Sprint3/4
     def test_serialize_city_to_json(self):
         city = City(name="beer_shava", id=10)
         self.assertEqual(city.to_json(), {'id': 10, 'name': 'beer_shava'})
 
-    # Unit test #5 - Yana
     # Sprint3/4
     def test_serialize_doctor_to_json(self):
         test_data = TestData.create()
@@ -187,7 +178,6 @@ class ApiIntegrationTests(TestCase):
 
         self.assertEqual(loads(response.content), content)
 
-    # Integration #1 - Yana
     # Sprint3/4
     def test_cities_api(self):
         request = Mock()
@@ -195,7 +185,6 @@ class ApiIntegrationTests(TestCase):
         response = cities_json(request)
         self.assertJson(response, [{"id": 1, "name": "test"}])
 
-    # Integration #2 - Yana
     # Sprint3/4
     def test_doctors_api(self):
         request = Mock(GET={})
@@ -207,7 +196,6 @@ class ApiIntegrationTests(TestCase):
                                     'last_name': 'last_name',
                                     'speciality': 'speciality'}])
 
-    # Integration #3 - Yana
     # Sprint3/4
     def test_doctors_api_limit_center(self):
         request = Mock(GET={"center": self.test_data.center.id})
@@ -233,7 +221,6 @@ class ApiIntegrationTests(TestCase):
                                     'last_name': 'last_name',
                                     'speciality': 'speciality'}])
 
-    # Integration #4 - Yana
     # Sprint3/4
     def test_centers_api(self):
         request = Mock(GET={}, POST={}, method="GET")
@@ -245,7 +232,6 @@ class ApiIntegrationTests(TestCase):
                                     'long': None,
                                     'name': 'test'}])
 
-    # Integration #5 - Yana
     # Sprint3/4
     def test_centers_filter_api(self):
         city = City(name="test")
