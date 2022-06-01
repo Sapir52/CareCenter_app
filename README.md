@@ -9,17 +9,17 @@ CareCenter4U contains three types of users: admin, Secretary, inhabitant.
 ### For Admin:
 Username: 11112222A
 
-password: password
+Password: password
 
 ### For Secretary:
 Username: 12121213M
 
-password: 123456789
+Password: 123456789
 
 ### For Inhabitantת
 Username: 123456785
 
-password: 1231231233
+Password: 1231231233
 
 #
 Each user has their own permissions.
