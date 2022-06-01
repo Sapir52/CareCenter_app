@@ -14,7 +14,6 @@ class RegistrationTests(TestCase):
 
         # Unit tests:
 
-    # Unit test #1 - Yana
     # PM2020T15-40
     def test_validate_citizen_id_number(self):
         form = RegistrationForm()
@@ -22,7 +21,6 @@ class RegistrationTests(TestCase):
         result = form.clean_id_number()
         self.assertEqual(result, '123456789')
 
-    # Unit test #2 - Yana
     # PM2020T15-40
     def test_reject_invalid_citizen_id_number(self):
         form = RegistrationForm()
@@ -36,7 +34,6 @@ class RegistrationTests(TestCase):
         form.cleaned_data = {'id_number': '123456780'}
         self.assertRaises(ValidationError, form.clean_id_number)
 
-    # Unit test #4 - Yana
     # PM2020T15-40
     def test_validate_secretary_id_number(self):
         form = RegistrationForm()
@@ -44,7 +41,6 @@ class RegistrationTests(TestCase):
         result = form.clean_id_number()
         self.assertEqual(result, '12345678M')
 
-    # Unit test #5 - Yana
     # PM2020T15-40
     def test_validate_phone_number(self):
         form = RegistrationForm()
@@ -52,14 +48,12 @@ class RegistrationTests(TestCase):
         result = form.clean_phone_number()
         self.assertEqual(result, '1549357633')
 
-    # Unit test #6 - Yana
     # PM2020T15-40
     def test_reject_invalid_phone_number(self):
         form = RegistrationForm()
         form.cleaned_data = {'phone_number': '154935763a'}
         self.assertRaises(ValidationError, form.clean_phone_number)
 
-    # Unit test #7 - Yana
     # PM2020T15-40
     def test_validate_first_name(self):
         form = RegistrationForm()
@@ -67,14 +61,12 @@ class RegistrationTests(TestCase):
         result = form.clean_first_name()
         self.assertEqual(result, 'tamar')
 
-    # Unit test #8 - Yana
     # PM2020T15-40
     def test_reject_invalid_first_name(self):
         form = RegistrationForm()
         form.cleaned_data = {'first_name': 'tamar1'}
         self.assertRaises(ValidationError, form.clean_first_name)
 
-    # Unit test #9 - Yana
     # PM2020T15-40
     def test_validate_last_name(self):
         form = RegistrationForm()
@@ -82,7 +74,6 @@ class RegistrationTests(TestCase):
         result = form.clean_last_name()
         self.assertEqual(result, 'cohen')
 
-    # Unit test #10 - Yana
     # PM2020T15-40
     def test_reject_invalid_last_name(self):
         form = RegistrationForm()
@@ -91,7 +82,6 @@ class RegistrationTests(TestCase):
 
     # Integration tests:
 
-    # Integration test #1 - Yana
     # PM2020T15-40
     def test_register_citizen(self):
         request = HttpRequest()
@@ -123,7 +113,6 @@ class RegistrationTests(TestCase):
         self.assertTrue(user.citizen)
         self.assertFalse(user.secretary)
 
-    # Integration test #2 - Yana
     # PM2020T15-40
     def test_register_secretary(self):
         request = HttpRequest()
@@ -159,7 +148,6 @@ class RegistrationTests(TestCase):
         self.assertTrue(user.secretary)
         self.assertFalse(user.citizen)
 
-    # Integration test #3 - Yana
     # PM2020T15-40
     def test_reject_invalid_registration_data(self):
         request = HttpRequest()
