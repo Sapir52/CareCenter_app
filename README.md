@@ -4,11 +4,29 @@ The goal of the project is to develop an app that simulates a medical center.
 
 The app's name is CareCenter4U, developed in django language.
 
-CareCenter4U contains three types of users: admin, Secretary, inhabitantת each user has their own permissions.
+CareCenter4U contains three types of users: admin, Secretary, inhabitant.
+
+### For Admin:
+Username: 11112222A
+
+password: password
+
+### For Secretary:
+Username: 12121213M
+
+password: 123456789
+
+### For Inhabitantת
+Username: 123456785
+
+password: 1231231233
+
+#
+Each user has their own permissions.
 
 The app allows:
 - Registration, login, update and deletion of users.
-- Add, update and delete center queues and user feedback.
+- Add, update and delete appointments at the center, types of medical centers and user feedback.
 - Find the nearest medical center using google map.
 - Use a panic button in case of emergency and update the relevant parties to give help.
 
