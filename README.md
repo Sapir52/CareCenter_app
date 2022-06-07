@@ -16,12 +16,12 @@ Username: 12121213M
 
 Password: 123456789
 
-### For Inhabitantת
+### For Inhabitant:
 Username: 123456785
 
 Password: 1231231233
 
-#
+
 Each user has their own permissions.
 
 The app allows:
