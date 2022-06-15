@@ -21,7 +21,6 @@ Username: 123456785
 
 Password: 1231231233
 
-
 Each user has their own permissions.
 
 The app allows:
