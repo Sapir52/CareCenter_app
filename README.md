@@ -27,7 +27,6 @@ The app allows:
 - Registration, login, update and deletion of users.
 - Add, update and delete appointments at the center, types of medical centers and user feedback.
 - Find the nearest medical center using google map.
-- Use a panic button in case of emergency and update the relevant parties to give help.
 
 # Migrate the database:
 
