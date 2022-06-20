@@ -49,3 +49,9 @@ Once migration and initial data load is complete , run the project using the fol
 ### Home
 ![nomePage](https://user-images.githubusercontent.com/63209732/171460707-83268363-ca60-438f-81b7-18de22da43a8.png)
 
+![1](https://user-images.githubusercontent.com/63209732/174571154-19c0f9fe-608e-4f1b-8836-7e9bcd33146f.png)
+
+![2](https://user-images.githubusercontent.com/63209732/174571195-f5cb3885-f28b-44da-b148-2938e0291cda.png)
+
+![3](https://user-images.githubusercontent.com/63209732/174571231-4b8c8f68-3ad9-4908-ab9c-9c5163063c70.png)
+
